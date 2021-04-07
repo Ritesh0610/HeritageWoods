@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace HagitageWoodsMVC.Controllers
 {
-    [Authorize]
+    
     public class ProductsController : Controller
     {
         private readonly HeritageWoodsContext _context;
@@ -49,7 +49,7 @@ namespace HagitageWoodsMVC.Controllers
 
             return View(products);
         }
-
+        [Authorize]
         // GET: Products/Create
         public IActionResult Create()
         {
@@ -80,7 +80,7 @@ namespace HagitageWoodsMVC.Controllers
             ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname", products.Cid);
             return View(products);
         }
-
+        [Authorize]
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -134,6 +134,7 @@ namespace HagitageWoodsMVC.Controllers
             return View(products);
         }
 
+        [Authorize]
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
