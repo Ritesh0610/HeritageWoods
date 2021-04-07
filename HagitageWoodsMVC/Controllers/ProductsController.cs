@@ -9,9 +9,11 @@ using HagitageWoodsMVC.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using Microsoft.AspNetCore.Authorization;
+using HagitageWoodsMVC.Areas.Identity.Pages.Account;
 
 namespace HagitageWoodsMVC.Controllers
 {
+    
     
     public class ProductsController : Controller
     {
@@ -168,6 +170,35 @@ namespace HagitageWoodsMVC.Controllers
         private bool ProductsExists(int id)
         {
             return _context.Products.Any(e => e.Pid == id);
+        }
+
+        [Authorize]
+        // GET: Products/Create
+        public IActionResult Sell()
+        {
+            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Sell([Bind("Pid,Cid,Name,Description,Price,Stock,ProductImage,ProductPic")] Products products)
+        {
+            if (ModelState.IsValid)
+            {
+                string rootPath = _webHostEnvironment.WebRootPath;
+                string fileName = Path.GetFileName(products.ProductPic.FileName);
+                string pPath = Path.Combine(rootPath + "/Images/" + fileName);
+                products.ProductImage = fileName;
+                var filStream = new FileStream(pPath, FileMode.Create);
+                await products.ProductPic.CopyToAsync(filStream);
+
+                _context.Add(products);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname", products.Cid);
+            return View(products);
         }
     }
 }
