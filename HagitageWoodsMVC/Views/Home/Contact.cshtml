@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+<script>
+    function func() {
+        alert("Thank you for showing interest in Heritagewoods. Your feedback is valuable to us.");
+    }
+</script>
+
+<div style="background-color:cornsilk">
+    <h3 class="text-center">Connect with Us</h3>
+
+    <div>
+        <h5></h5>
+    </div>
+    <div class="col-md-4">
+
+        <form class="border-dark" style="background-color:lightpink">
+            <div class="container">
+                <div class="mb-4">
+                    FirstName <input type="text" class="form-control" id="FirstName">
+                </div>
+                <div class="mb-4">
+                    LastName<input type="text" class="form-control" id="LastName">
+                </div>
+                <div class="mb-4">
+                    Email<input type="text" class="form-control" id="EmailAdd">
+                </div>
+
+                <div class="mb-4">
+                    Feedback
+                    <textarea id="feed" style="height:150%; width:100%" name="feed"> </textarea>
+                </div>
+
+                <div>
+                    <button type="submit" onclick="func()" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
