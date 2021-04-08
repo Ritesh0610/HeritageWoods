@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table " >
     <thead>
         <tr>
             <th>
@@ -37,7 +37,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="color:darkmagenta;opacity:2;">
         @foreach (var item in Model)
         {
             <tr>
@@ -58,16 +58,17 @@
                     </td>*@
 
                 <td>
-                    <img src="@("/Images/" +item.ProductImage)" height="150" width="200" />
+                    <img src="@("/Images/" +item.ProductImage)" height="100" width="150" />
                 </td>
 
                 <td>
                     @Html.DisplayFor(modelItem => item.C.Catname)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Pid">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Pid">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Pid">Delete</a>
+                    @*<a asp-action="Edit" asp-route-id="@item.Pid">Edit</a>*@ <!--|-->
+                    <a asp-action="Details" asp-route-id="@item.Pid"><input type="submit" value="Details" class="btn btn-info"></a> |
+                    @*<a asp-action="Delete" asp-route-id="@item.Pid">Delete</a>*@
+                    <a asp-action="Buy" asp-route-id="@item.Pid"><input type="submit" value="Buy" class="btn btn-success" /></a>
                 </td>
             </tr>
         }

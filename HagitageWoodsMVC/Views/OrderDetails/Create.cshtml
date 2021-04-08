@@ -1,0 +1,67 @@
+﻿@model HagitageWoodsMVC.Models.OrderDetails
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>OrderDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Userid" class="control-label"></label>
+                <input asp-for="Userid" class="form-control" />
+                <span asp-validation-for="Userid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label   asp-for="Pid" class="control-label"></label>
+                <select asp-for="Pid" class="form-control" asp-items="ViewBag.Pid"></select>
+            </div>
+            
+            <div hidden class="form-group">
+                <label asp-for="OrderAmount" class="control-label"></label>
+                <input asp-for="OrderAmount" class="form-control" readonly />
+                <span asp-validation-for="OrderAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShippingCharge" class="control-label"></label>
+                <input asp-for="ShippingCharge" value="1000" class="form-control" readonly />
+                <span asp-validation-for="ShippingCharge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderQuantity" class="control-label"></label>
+                <input asp-for="OrderQuantity" class="form-control" />
+                <span asp-validation-for="OrderQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderEmail" class="control-label"></label>
+                <input asp-for="OrderEmail" class="form-control" />
+                <span asp-validation-for="OrderEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderMobile" class="control-label"></label>
+                <input asp-for="OrderMobile" class="form-control" />
+                <span asp-validation-for="OrderMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderAdress" class="control-label"></label>
+                <input asp-for="OrderAdress" class="form-control" />
+                <span asp-validation-for="OrderAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Place Order" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
