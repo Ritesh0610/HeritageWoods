@@ -53,7 +53,7 @@ namespace HagitageWoodsMVC.Controllers
         }
         public IActionResult Create()
         {
-            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname");
+            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Cid", "Cid");
             return View();
         }
 
@@ -74,40 +74,11 @@ namespace HagitageWoodsMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Catname"]= new SelectList(_context.ProductCategory, "Catname", "Catname",products.Cid);
+
+            ViewData["Catname"]= new SelectList(_context.ProductCategory, "Cid", "Cid",products.Cid);            
             return View(products);
         }
 
-        //// GET: Products/Create
-        //public IActionResult Create()
-        //{
-        //    ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname");
-        //    return View();
-        //}
-
-        //// POST: Products/Create
-        //// To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        //// more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create([Bind("Pid,Cid,Name,Description,Price,Stock,ProductImage,ProductPic")] Products products)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        string rootPath = _webHostEnvironment.WebRootPath;
-        //        string fileName = Path.GetFileName(products.ProductPic.FileName);
-        //        string pPath = Path.Combine(rootPath + "/Images/" + fileName);
-        //        products.ProductImage = fileName;
-        //        var filStream = new FileStream(pPath, FileMode.Create);
-        //        await products.ProductPic.CopyToAsync(filStream);
-
-        //        _context.Add(products);
-        //        await _context.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname", products.Cid);
-        //    return View(products);
-        //}
 
         [Authorize]
         // GET: Products/Edit/5
@@ -130,6 +101,7 @@ namespace HagitageWoodsMVC.Controllers
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Pid,Cid,Name,Description,Price,Stock,ProductImage")] Products products)
@@ -202,7 +174,7 @@ namespace HagitageWoodsMVC.Controllers
         // GET: Products/Create
         public IActionResult Sell()
         {
-            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname");
+            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Cid", "Cid");
             return View();
         }
 
@@ -223,7 +195,7 @@ namespace HagitageWoodsMVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Catname", "Catname", products.Cid);
+            ViewData["Catname"] = new SelectList(_context.ProductCategory, "Cid", "Cid", products.Cid);
             return View(products);
         }
 

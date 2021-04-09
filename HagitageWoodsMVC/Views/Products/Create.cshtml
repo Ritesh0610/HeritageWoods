@@ -10,8 +10,8 @@
 <hr />
 
 <div class="row bg-success text-light" style="opacity:0.75">
-    <div class="col-md-4 border-dark">
-        <form asp-action="Create">
+    <div class="col-md-6 border-dark">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Cid" class="control-label">Category</label>
@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ProductPic" class="control-label"></label>
-                <input asp-for="ProductPic" class="form-control" />
+                <input asp-for="ProductPic" accept="image/*" class="form-control" />
                 <span asp-validation-for="ProductPic" class="text-danger"></span>
             </div>
 
@@ -47,6 +47,34 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+    </div>
+    <div class="col-md-6 text-light" style="font-size:x-large;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-10">
+                <table cellpadding="1" border="1">
+                    <tr>
+                        <th>Category Id&nbsp;&nbsp;</th>
+                        <th>&nbsp;&nbsp;Type</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Living Room</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Dining Room</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bed Room</td>
+                    <tr>
+                        <td>4</td>
+                        <td>Office</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 
