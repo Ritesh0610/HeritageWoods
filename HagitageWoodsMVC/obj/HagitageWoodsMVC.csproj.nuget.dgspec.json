@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ProjectPractice\\HagitageWoodsMVC\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj": {}
+    "D:\\ProjectPractice\\ProjectFinal\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj": {}
   },
   "projects": {
-    "D:\\ProjectPractice\\HagitageWoodsMVC\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj": {
+    "D:\\ProjectPractice\\ProjectFinal\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ProjectPractice\\HagitageWoodsMVC\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj",
+        "projectUniqueName": "D:\\ProjectPractice\\ProjectFinal\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj",
         "projectName": "HagitageWoodsMVC",
-        "projectPath": "D:\\ProjectPractice\\HagitageWoodsMVC\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj",
+        "projectPath": "D:\\ProjectPractice\\ProjectFinal\\HagitageWoodsMVC\\HagitageWoodsMVC.csproj",
         "packagesPath": "C:\\Users\\nitin\\.nuget\\packages\\",
-        "outputPath": "D:\\ProjectPractice\\HagitageWoodsMVC\\HagitageWoodsMVC\\obj\\",
+        "outputPath": "D:\\ProjectPractice\\ProjectFinal\\HagitageWoodsMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nitin\\AppData\\Roaming\\NuGet\\NuGet.Config",
